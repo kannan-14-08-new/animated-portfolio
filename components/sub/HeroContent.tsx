@@ -29,7 +29,7 @@ export default function HeroContent() {
 
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto leading-[80px]"
+          className="flex flex-col text-4xl gap-6 mt-6 sm:text-3xl font-bold text-white max-w-[600px] w-auto h-auto leading-[80px] md:text-6xl"
         > <span>
           Providing
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
