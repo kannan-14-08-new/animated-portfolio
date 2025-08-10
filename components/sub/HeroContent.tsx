@@ -14,55 +14,62 @@ export default function HeroContent() {
     <motion.div
       initial={"hidden"}
       animate={"visible"}
-      className="flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]"
+      className="flex flex-col md:flex-row items-center justify-center px-6 md:px-20 mt-40 md:mt-40 w-full z-[20] gap-12"
     >
-      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
+      <div className="flex flex-col gap-5 max-w-full md:max-w-[600px] text-start">
         <motion.div
           variants={slideInFromTop}
-          className="Welcome-box py-[8px] px-[4px] border-[#7842f88b] opacity-[0.9]"
+          className="Welcome-box py-2 px-3 border border-[#7842f88b] opacity-90 inline-flex items-center rounded"
         >
-          <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px]">
+          <SparklesIcon className="text-[#b49bff] mr-2 h-5 w-5" />
+          <h1 className="Welcome-text text-xs md:text-sm font-medium">
             Frontend Developer Portfolio
           </h1>
         </motion.div>
 
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col text-4xl gap-6 mt-6 sm:text-3xl font-bold text-white max-w-[600px] w-auto h-auto leading-[80px] md:text-6xl"
-        > <span>
-          Providing
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-            {" "}
-            the best{" "}
-          </span>
-          project Expreience
+          className="flex flex-col text-4xl sm:text-5xl md:text-6xl font-bold text-white max-w-full leading-tight md:leading-[80px]"
+        >
+          <span>
+            Providing
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+              {" "}
+              the best{" "}
+            </span>
+            project Experience
           </span>
         </motion.div>
 
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="text-lg text-gray-400 my-5 max-w-[600px]"
+          className="text-base md:text-lg text-gray-400 my-4 max-w-full md:max-w-[600px]"
         >
-          &apos;A Frontend Developer with experience to Website, Mobile, and
-          Software development. Check out my project and skills &apos;
+          &apos;A Frontend Developer with experience in Website, Mobile, and
+          Software development. Check out my projects and skills.&apos;
         </motion.p>
 
         <motion.a
           variants={slideInFromLeft(1)}
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+          className="py-2 px-6 bg-gradient-to-r from-purple-600 to-cyan-600 text-white cursor-pointer rounded-lg max-w-[200px] text-center hover:scale-105 transition-transform duration-300"
+          href="#about"
         >
           Learn More
         </motion.a>
       </div>
+
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="w-full h-full flex justify-center items-center"
+        className="w-full max-w-[650px] flex justify-center items-center"
       >
-        <Image src={"/mainIconsdark.svg"}
-        alt="work icons"
-        height={650}
-        width={650}/>
+        <Image
+          src="/mainIconsdark.svg"
+          alt="work icons"
+          width={650}
+          height={650}
+          className="w-full h-auto object-contain"
+          priority={true}
+        />
       </motion.div>
     </motion.div>
   );
